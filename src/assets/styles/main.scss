@@ -1,0 +1,228 @@
+body {
+  background: #498cec;
+  font-family: "Avenir", Helvetica, Arial, sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  padding: 0;
+}
+#app {
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+
+  header {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    padding: 80px 80px 0 80px;
+
+    .city {
+      display: inline-block;
+      position: relative;
+
+      .size-phone {
+        display: flex;
+        position: absolute;
+        flex-direction: column;
+
+        span { 
+          font-size: 25px;
+          color: #ffffff;
+          visibility: hidden;
+        }
+
+        .change-city {
+          outline: none;
+          border: none;
+          background: rgba(#ffffff, 0);
+          font-size: 10px;
+          color: #ffffff;
+          visibility: hidden;
+          padding: 0 0 0 0;
+          margin-top: 10px;
+        }
+      }
+
+      input {
+        outline: none;
+        border: 1px solid #979797;
+        padding: 5px 5px 5px 5px;
+        display: block;
+        width: 560px;
+        height: 60px;
+        background: #fff;
+        border-radius: 8px;
+        font-size: 30px;
+        padding-left: 40px;
+        padding-left: 40px;
+      }
+
+      .seach-city {
+        display: block;
+        font-size: 30px;
+        width: 32px;
+        height: 38px;
+        position: absolute;
+        right: 40px;
+        top: 50%;
+        transform: translateY(-50%);
+        padding: 0px 0px;
+        outline: none;
+        border: none;
+        background: rgba(#ffffff, 0);
+        color: #1086ff;
+      }
+      @media screen and (max-width: 415px) {
+        header {
+          padding: 50px 50px 0 50px;
+        }
+          .size-phone {
+            .change-city {
+              font-size: 10px;
+              color: rgba(#ffffff, 0.4);
+              visibility: inherit;
+            }
+            span {
+            position: relative;
+            margin-top: 5%; 
+            font-size: 20px;
+            color: #ffffff;
+            visibility: inherit; 
+            }
+          }
+
+          input {
+            visibility: hidden;
+            width: 32px;
+            height: 38px;
+          }
+          .seach-city {
+            visibility: hidden;
+            width: 32px;
+            height: 38px;
+            
+          }
+        }
+      }
+    .temp-control {
+      display: flex;
+      flex-direction: row;
+
+      input[type="radio"] {
+        display: none;
+      }
+
+      label {
+        color: #ffffff;
+        display: inline-block;
+        height: 50%;
+        width: 50px;
+        outline: none;
+        border: none;
+        font-size: 30px;
+        border: 1px solid #ffffff;
+        text-align: center;
+
+        &:first-child {
+          border-radius: 10px 0 0 10px;
+          border-right: 0;
+        }
+
+        &:last-child {
+          border-radius: 0 10px 10px 0;
+          border-left: 0;
+        }
+
+        &.active {
+          color: #ffffff;
+          background: rgba(#ffffff, 0.3);
+        }
+      }
+      @media screen and (max-width: 415px) {
+        label {
+          height: 50%;
+          width: 40px;
+          font-size: 25px;
+        }
+      }
+    }
+  }
+  @media screen and (max-width: 415px) {
+    header {
+      padding: 40px 40px 0 40px;
+    }
+  }
+
+  main {
+    display: flex;
+    height: calc(100vh - 304px);
+    justify-content: center;
+    align-items: center;
+    font-size: 150px;
+    color: #ffffff;
+    
+    img {
+      height: 150px;
+    }
+
+    span {
+      font-size: 75px;
+      display: block;
+      transform: translateY(-29%);
+      border-bottom: 5px solid #ffffff;
+      margin-left: 15px; 
+    }
+  }
+  @media screen and (max-width: 415px) {
+    main {
+      font-size: 75px;
+
+      img {
+        height: 75px;
+      }
+
+      span {
+        font-size: 37px;
+      }
+    }
+  }
+
+  footer {
+    display: flex;
+    flex-flow: row wrap;
+    flex-grow: 1;
+    align-content: center;
+    justify-content: center;
+
+    div {
+      display:flex;
+      flex-direction: column;
+      width: 20%;
+      padding-bottom: 70px; 
+      justify-content: start;
+      font-size: 15px;
+
+      span {
+        color:  rgba(#ffffff, 0.4);
+        text-align: start;
+      }
+
+      .params {
+        margin-top: 5px;
+        font-size: 20px;
+        color: #ffffff;
+      }
+
+      @media screen and (max-width: 415px) {
+        width: 45%;
+        margin-left: 5px;
+        padding-bottom: 10px;
+        font-size: 15px;
+
+        .params {
+          font-size: 15px;
+        }
+      }
+    }
+  }
+}
