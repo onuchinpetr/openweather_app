@@ -23,12 +23,6 @@ export default {
     Footer
   },
   computed: {
-    city () {
-      return this.$store.getters.GET_CITY;
-    },
-    unit () {
-      return this.$store.getters.GET_UNIT;
-    },
     weatherIcon (){
       return this.$store.getters.GET_WEATHERICON;
     },
