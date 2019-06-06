@@ -78,16 +78,23 @@ export default new Vuex.Store({
 })
 
 function changeIcon(payload) {
-  console.log("http://openweathermap.org/img/w/" + payload + ".png")
   return "http://openweathermap.org/img/w/" + payload + ".png"
 } 
 function changeWind(payload){
-  console.log(payload.unit)
+  if(payload.wind.deg === undefined){
+    if (payload.unit === "metric") {
+      return  payload.wind.speed + " м/с";
+    } else {
+      return payload.wind.speed + " миль/час";
+    }
+  }else{
   const val =  Math.floor((payload.wind.deg / 45) + 0.5);
   const arr = ["северный","северо-восточный","восточный", "юго-восточный","южный","юго-западный","западный","северо-западный"];
   if (payload.unit === "metric") {
-    return  payload.wind.speed + " м/с, " + arr[(val % 8)]
+    return  payload.wind.speed + " м/с, " + arr[(val % 8)];
   } else {
-    return payload.wind.speed + " миль/час, " + arr[(val % 8)]
+    return payload.wind.speed + " миль/час, " + arr[(val % 8)];
   }
+  }
+  
 }
