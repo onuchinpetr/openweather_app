@@ -9,10 +9,10 @@
       <button class="seach-city" @click="featchWeatherclickButton">OK</button>
     </div>
     <div class="temp-control">
-      <label for="c" :class="setLabelC">
+      <label for="c" :class="{ active: setLabelC }">
         <input type="radio" id="c" value="metric" v-model="unit" @change="featchWeatherclickButton">C
       </label>
-      <label for="f" :class="setLabelF">
+      <label for="f" :class="{ active: setLabelF }">
         <input type="radio" name id="f" value="imperial" v-model="unit" @change="featchWeatherclickButton">F
       </label>
     </div>
@@ -32,15 +32,11 @@ export default {
     this.featchWeatherclickButton();
   },
   computed: {
-    setLabelC() {
-      if (this.unit === 'metric'){
-        return "active";
-      }
+    setLabelC () {
+        return this.unit === 'metric';
     },
-    setLabelF() {
-      if (this.unit === 'imperial'){
-        return "active";
-      }
+    setLabelF () {
+        return this.unit === 'imperial';
     }
   },
   methods:{
