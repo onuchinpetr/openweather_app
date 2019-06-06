@@ -8,14 +8,7 @@
 
 <script>
 export default {
-  computed: {
-    weatherIcon(){
-      return this.$store.getters.GET_WEATHERICON;
-    },
-    temp() {
-        return this.$store.getters.GET_TEMP;
-    },
-  }
+  props: ['temp', 'weatherIcon']
 }
 </script>
 

@@ -6,14 +6,14 @@
         <button class="change-city" @click.prevent="dialog">Сменить город</button>
       </div>
       <input type="text" placeholder="Город" v-model="city">
-      <button class="seach-city" @click="featchWeatherclickButton()">OK</button>
+      <button class="seach-city" @click="featchWeatherclickButton">OK</button>
     </div>
     <div class="temp-control">
       <label for="c" :class="setLabelC">
-        <input type="radio" id="c" value="metric" v-model="unit" @change="featchWeatherclickButton()">C
+        <input type="radio" id="c" value="metric" v-model="unit" @change="featchWeatherclickButton">C
       </label>
       <label for="f" :class="setLabelF">
-        <input type="radio" name id="f" value="imperial" v-model="unit" @change="featchWeatherclickButton()">F
+        <input type="radio" name id="f" value="imperial" v-model="unit" @change="featchWeatherclickButton">F
       </label>
     </div>
   </header>
@@ -27,6 +27,9 @@ export default {
       city: 'Омск',
       unit: 'metric'
     }
+  },
+  created: function () {
+    this.featchWeatherclickButton();
   },
   computed: {
     setLabelC() {

@@ -21,20 +21,7 @@
 
 <script>
 export default {
-  computed: {
-    wind(){
-      return this.$store.getters.GET_WIND;
-    },
-    pressure(){
-      return this.$store.getters.GET_PRESSURE;
-    },
-    humidity() {
-      return this.$store.getters.GET_HUMIDITY;
-    },
-    chanceRain() {
-      return this.$store.getters.GET_CHANCERAIN;
-    }
-  }
+  props: ['wind', 'pressure', 'humidity', 'chanceRain']
 }
 </script>
 

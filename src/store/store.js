@@ -17,7 +17,6 @@ export default new Vuex.Store({
   },
   mutations: {
     SET_WEATHERICON(state, payload) {
-      console.log(payload)
       state.weatherIcon = changeIcon(payload);
     },
     SET_TEMP(state, payload) {
