@@ -1,4 +1,5 @@
-# app-weather
+# openweather_app
+
 
 ## Project setup
 ```
